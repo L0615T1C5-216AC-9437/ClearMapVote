@@ -1,7 +1,7 @@
 {
-  "name": "CMRTV",
+  "name": "CMV",
   "author": "L0615T1C5.216AC:9437 [Impact Phd]",
-  "main": "cmrtv.cmrtv_java",
+  "main": "CMV.Main",
   "description": "RTV but clears map",
   "version": 1.0
 }
