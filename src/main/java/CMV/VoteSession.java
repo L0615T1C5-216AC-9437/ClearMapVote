@@ -5,7 +5,9 @@ import arc.util.Strings;
 import arc.util.Time;
 import arc.util.Timer;
 import mindustry.Vars;
+import mindustry.entities.traits.Entity;
 import mindustry.entities.type.Player;
+import mindustry.entities.type.Unit;
 import mindustry.game.Team;
 import mindustry.gen.Call;
 import mindustry.maps.Map;
@@ -61,6 +63,17 @@ class VoteSession{
                     }
                 }
             }
+            //
+            for (Unit u : unitGroup.all()) {
+                if(u.getTeam() == Team.sharded) {
+                    u.dead = true;
+                }
+            }
+            //
+            for(Entity fire : fireGroup){
+                Call.onRemoveFire(fire.getID());
+            }
+            //
             for (Player p : playerGroup.all()) {
                 Call.onWorldDataBegin(p.con);
                 netServer.sendWorldData(p);
