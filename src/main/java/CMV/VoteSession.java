@@ -27,7 +27,7 @@ class VoteSession{
 
     float voteDuration = 30;
 
-    public int votesRequired(){return (int) (playerGroup.size()/1.666f);}
+    public int votesRequired(){return (int) (playerGroup.size()/1.666f)+1;}
 
     public VoteSession(VoteSession[] map){
         this.map = map;
