@@ -74,6 +74,10 @@ class VoteSession{
                 Call.onRemoveFire(fire.getID());
             }
             //
+            for(Entity groundEffect : groundEffectGroup){
+                Call.onPuddleRemoved(groundEffect.getID());
+            }
+            //
             for (Player p : playerGroup.all()) {
                 Call.onWorldDataBegin(p.con);
                 netServer.sendWorldData(p);
